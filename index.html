@@ -19,14 +19,25 @@
                 <h1>My Website</h1>
             </div>
             <div class="menu">
-                <i class="fas fa-bars"></i>
+                    <i onclick="myFunction()" class="fas fa-bars"></i>
+                <script>
+                    function myFunction() {
+                    var x = document.getElementById("aside");
+                    var y = document.getElementById("left")
+                    if (x.style.visibility === "hidden") {
+                        x.style.visibility = "visible";
+                    } else {
+                        x.style.visibility = "hidden";
+                    }
+                    } 
+                </script>
             </div>
         </nav>
         <!-- end-nav -->
 
         <!-- main -->
         <main class="d-flex">
-            <div class="main-left">
+            <div id="left" class="main-left">
                 <div class="card-container d-flex justify-content-around">
                     <div class="card d-flex justify-content-center align-items-center">
                         Card 1
@@ -42,7 +53,7 @@
                     </div>
                 </div>
             </div>
-            <aside class="main-right d-flex flex-direction-column justify-content-center align-items-center">
+            <aside id="aside" class="main-right d-flex flex-direction-column justify-content-center align-items-center">
                 <ul>
                     <li class="aside-link"><a href="#">Link 1</a></li>
                     <li class="aside-link"><a href="#">Link 2</a></li>
@@ -60,5 +71,7 @@
             <p class="footer-p">Copyright</p>
         </footer>
     </div>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </body>
 </html>

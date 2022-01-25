@@ -30,11 +30,6 @@ h1 {
 /* metodo 2, nav con position relative, nav-logo con absolute posto a sinistra
  e nav-title lasciato centered */
 
-.main {
-    height: 100%;
-    width: 100%;
-}
-
 .main-left {
     width: 90%;
 }
@@ -55,6 +50,7 @@ h1 {
 }
 
 .main-right {
+    visibility: visible;
     height: 76vh;
     width: 10%;
     background-color: green;
@@ -70,6 +66,13 @@ footer {
     background: grey;
 }
 
+
+@media only screen and (min-width:992px){
+    .main-right {
+        visibility: visible !important;
+    }
+}
+
 @media only screen and (min-width:768px) and (max-width: 991px) {
     .nav-logo {
         display: none;
@@ -82,6 +85,7 @@ footer {
     .menu {
         visibility: visible;
         margin-right: 1rem;
+        cursor: pointer;
     }
 
     .main-left {
@@ -95,7 +99,10 @@ footer {
     }
 
     .main-right {
-        display: none;
+        visibility: hidden;
+        height: 76vh;
+        width: 10%;
+        background-color: green;
     }
 }
 
@@ -124,10 +131,10 @@ footer {
     }
 
     .main-right {
-        display: none;
+        visibility: hidden !important;
     }
 
-    footer p:nth-child(2) , p:nth-child(3) {
+    footer p:nth-child(2) , footer p:nth-child(3) {
         display: none;
     }
 
